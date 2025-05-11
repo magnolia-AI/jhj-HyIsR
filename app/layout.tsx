@@ -1,37 +1,21 @@
-import React from 'react';
-import Link from 'next/link';
+import "@/styles/globals.css";
+import { ReactNode } from "react";
 
 export const metadata = {
-  title: 'Anders Portfolio',
-  description: 'Personal portfolio of Anders, a lover of corgis',
+  title: "Anders' Portfolio",
+  description: "Personal portfolio website of Anders, a lover of corgis.",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body className="flex flex-col min-h-screen bg-gray-50 text-gray-900">
-        <header className="bg-white shadow-md">
-          <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 className="text-2xl font-bold">Anders</h1>
-            <nav>
-              <Link href="#about" className="mr-4 hover:underline">
-                About
-              </Link>
-              <Link href="#projects" className="hover:underline">
-                Projects
-              </Link>
-            </nav>
-          </div>
+      <body className="bg-gradient-to-b from-white to-blue-50 min-h-screen flex flex-col">
+        <header className="bg-blue-600 text-white p-6 shadow-md">
+          <h1 className="text-3xl font-bold">Anders</h1>
         </header>
-
-        <main className="flex-grow container mx-auto px-6 py-10">
-          {children}
-        </main>
-
-        <footer className="bg-white shadow-inner py-6 mt-12">
-          <div className="container mx-auto px-6 text-center text-sm text-gray-600">
-            &copy; {new Date().getFullYear()} Anders. All rights reserved.
-          </div>
+        <main className="flex-grow container mx-auto px-4 py-8">{children}</main>
+        <footer className="bg-blue-600 text-white p-4 text-center">
+          &copy; {new Date().getFullYear()} Anders
         </footer>
       </body>
     </html>

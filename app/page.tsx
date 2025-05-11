@@ -1,42 +1,32 @@
-import Image from 'next/image';
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
-    <section>
-      <div className="text-center max-w-3xl mx-auto">
-        <h2 className="text-4xl font-extrabold mb-4">Hi, I'm Anders</h2>
-        <p className="text-lg mb-8">
-          I'm a passionate lover of corgis and a software developer.
+    <main className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-white to-blue-50 p-8">
+      <h1 className="text-5xl font-extrabold mb-6">Hi, I'm Anders</h1>
+      <p className="text-xl mb-8 max-w-xl text-center">
+        I'm a passionate lover of corgis and welcome you to my personal portfolio website.
+      </p>
+      <section className="bg-white shadow-md rounded-lg p-6 max-w-xl w-full">
+        <h2 className="text-3xl font-semibold mb-4">Why I Love Corgis</h2>
+        <p className="mb-4">
+          Corgis are adorable, energetic, and full of personality. Their short legs and fluffy tails make them irresistibly cute and fun companions.
         </p>
-        <div className="rounded-lg overflow-hidden shadow-lg">
+        <div className="relative h-64 w-full rounded overflow-hidden">
           <Image
             src="https://images.unsplash.com/photo-1558788353-f76d92427f16?auto=format&fit=crop&w=800&q=80"
-            alt="Cute corgi dog"
-            width={800}
-            height={533}
+            alt="Cute Corgi"
+            fill
             className="object-cover"
             priority
           />
         </div>
-      </div>
-
-      <section id="about" className="mt-16 max-w-3xl mx-auto">
-        <h3 className="text-2xl font-semibold mb-4">About Me</h3>
-        <p>
-          Hello! I'm Anders, a developer who loves coding and corgis. I enjoy
-          building clean and modern web applications and sharing my passion for
-          technology and dogs.
-        </p>
       </section>
-
-      <section id="projects" className="mt-16 max-w-3xl mx-auto">
-        <h3 className="text-2xl font-semibold mb-4">Projects</h3>
-        <ul className="list-disc list-inside">
-          <li>Portfolio Website (this site)</li>
-          <li>Coming soon: More projects!</li>
-        </ul>
-      </section>
-    </section>
+      <footer className="mt-12 text-center text-sm text-gray-600">
+        &copy; {new Date().getFullYear()} Anders
+      </footer>
+    </main>
   );
 }
 
